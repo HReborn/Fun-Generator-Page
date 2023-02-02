@@ -1,1 +1,33 @@
-
+<html>
+  <head>
+    <title> Generator page </title>
+    <link href="./stylesheet.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="title">
+      <h1>FUN GENERATOR PAGE</h1>
+    </div>
+    <div id="sub-titles">
+      <div id='button-title'>
+        <h2>Randomizers</h2>
+      </div><div id='output-title'>
+        <h2>Generator results</h2>
+      </div>
+    </div>
+      <div id="buttons">
+        <div id= "button-list">
+          <button class="buttons" id="meme-button" onclick="addRandomMemeToPage(memeList)">Show a meme</button>
+          <button class="buttons" id="joke-button" onclick="addRandomJokeToPage(jokeList, jokeCounter)">Tell a joke</button>
+          <button class="buttons" id="quote-button" onclick="addRandomQuoteToPage(quoteList)">Quote someone</button>
+          <button class="buttons" id="riddle-button" onclick="addRandomRiddleToPage()">Riddle me</button>
+        </div>
+      </div><div id="output-text"><div id="output-text-list">
+          <h3 id="meme-text">Here's a big meme cargo drop</h3>
+          <h3 id="joke-text">The joke's on us</h3>
+          <h3 id="quote-text">Let's try to make you wiser</h3>
+          <h3 id="riddle-text">We'll be the judge of your IQ</h3>
+        </div>
+      </div>
+    <script>src="./index.js"</script>
+  </body>
+</html>
