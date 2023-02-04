@@ -14,6 +14,7 @@ h1 {
   font-weight: 900;
   text-shadow: 3px 3px 1px white;
 }
+/*
 #title {
   display: block;
 
@@ -66,5 +67,42 @@ button {
   right: 20%;
   left: 20%;
   width: 60%;
-  border: 1px solid black;
+}
+*/
+#page {
+  display: flex;
+  flex-direction: column;
+}
+#sub-titles {
+  display: flex;
+  justify-content: space-around;
+}
+#content {
+  display: flex;
+  justify-content: space-around;
+}
+#buttons {
+  display: flex;
+}
+#button-list {
+  display: flex;
+  flex-direction: column;
+  
+}
+#output-text {
+  display: flex;
+  flex-direction: row;
+}
+#output-text-list {
+  text-align: center;
+}
+button {
+  height: 6vh;
+  width: 17vw;
+  margin-bottom: 9px;
+}
+.output-result {
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
 }
