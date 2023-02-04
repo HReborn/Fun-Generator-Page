@@ -81,9 +81,12 @@ fillOutputElement = (outputElement, id, content) => {
   outputElement.setAttribute('class', 'output-result')
   if (id === 'meme') {
     outputElement.setAttribute('src', content)
+    outputElement.setAttribute('height', '300px')
   } else if (outputElement.tagName === "P") {
     outputElement.textContent = content
+
   }
+   outputElement.style.width = '300px'
 }
 addOutputElementToPage = (outputElement, addBeforeId) => {
   let outputTextParent = document.getElementById('output-text-list')
@@ -131,6 +134,8 @@ addRandomRiddleToPage = () => {
   fetchRandomRiddle().then(data => {
     deleteOutputElementIfExists()
     let outputElement = createOutputElement('div')
+    outputElement.setAttribute('class', 'created')
+    
     let riddle = document.createElement('p')
     riddle.textContent = data.riddle
     outputElement.appendChild(riddle)
@@ -138,6 +143,7 @@ addRandomRiddleToPage = () => {
     fillOutputElement(outputElement, 'riddle')
     addOutputElementToPage(outputElement)
     answer = data.answer
+    console.log(outputElement)
   })
 }
 addRandomQuoteToPage = (quoteList) => {
