@@ -4,13 +4,13 @@ randNum = function(limit) {
 showPartTwo = () => {
   let partTwo = document.createElement('p') 
   partTwo.textContent = answer
-  document.getElementById('showPartTwo').remove()
+  document.getElementById('show-part-two-button').remove()
   document.querySelector('.output-result').appendChild(partTwo)
 }
 appendAnswerButton = (parent) => {
   let partTwoButton = document.createElement('button')
   partTwoButton.textContent = 'Tell me'
-  partTwoButton.id = 'showPartTwo'
+  partTwoButton.id = 'show-part-two-button'
   partTwoButton.onclick = showPartTwo
   parent.appendChild(partTwoButton)
 }
@@ -81,12 +81,9 @@ fillOutputElement = (outputElement, id, content) => {
   outputElement.setAttribute('class', 'output-result')
   if (id === 'meme') {
     outputElement.setAttribute('src', content)
-    outputElement.setAttribute('height', '300px')
   } else if (outputElement.tagName === "P") {
     outputElement.textContent = content
-
   }
-   outputElement.style.width = '300px'
 }
 addOutputElementToPage = (outputElement, addBeforeId) => {
   let outputTextParent = document.getElementById('output-text-list')
@@ -97,7 +94,6 @@ addOutputElementToPage = (outputElement, addBeforeId) => {
     outputTextParent.insertBefore(outputElement, addBeforeElement)//
   }
 }
-// append to #output-text-list
 //-------------------------------------------------------------
 // ----------------------BUTTON FUNCTIONS----------------------
 // ------------------------------------------------------------
@@ -134,8 +130,6 @@ addRandomRiddleToPage = () => {
   fetchRandomRiddle().then(data => {
     deleteOutputElementIfExists()
     let outputElement = createOutputElement('div')
-    outputElement.setAttribute('class', 'created')
-    
     let riddle = document.createElement('p')
     riddle.textContent = data.riddle
     outputElement.appendChild(riddle)
@@ -143,7 +137,6 @@ addRandomRiddleToPage = () => {
     fillOutputElement(outputElement, 'riddle')
     addOutputElementToPage(outputElement)
     answer = data.answer
-    console.log(outputElement)
   })
 }
 addRandomQuoteToPage = (quoteList) => {
